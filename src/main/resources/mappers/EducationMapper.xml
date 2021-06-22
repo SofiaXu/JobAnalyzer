@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.aoba.jobanalyzer.repositories.EducationRepository" >
+    <resultMap id="EducationResultMap" type="site.aoba.jobanalyzer.models.Education" >
+        <id column="Id" property="id" />
+        <result column="Name" property="name" />
+    </resultMap>
+
+    <select id="getEducations" resultMap="EducationResultMap"  >
+        SELECT
+        *
+        FROM Education
+    </select>
+</mapper>

@@ -1,0 +1,23 @@
+server:
+  port: 58081
+  tomcat:
+    uri-encoding: utf-8
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bigdata
+    password: 1234
+    username: root
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+
+    producer:
+      retries: 0
+      batch-size: 16384
+      buffer-memory: 33554432
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+mybatis:
+  mapper-locations: classpath:mappers/*Mapper.xml
+  type-aliases-package: site.aoba.springdemo.repositories
